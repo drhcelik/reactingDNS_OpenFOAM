@@ -16,14 +16,19 @@
 		)
 	);
 	
-	dimensionedScalar centerX
+	dimensionedScalar centerX // x coordinate for center
 	(
-	   chemistryProperties.lookup("centerX")
+	   moveFieldsProperties.lookup("centerX")
 	);
 	
-	dimensionedScalar deltaX
+	dimensionedScalar deltaX // mesh size
 	(
-	   chemistryProperties.lookup("deltaX")
+	   moveFieldsProperties.lookup("deltaX")
+	);
+	
+	dimensionedScalar nMoveCellThreshHold // trigger for move
+	(
+	   moveFieldsProperties.lookup("nMoveCellThreshHold")
 	);
 	
 	// first of all, we need to find the flame front
@@ -35,9 +40,14 @@
 	scalar	moveLength = currentX - centerX.value();
 	label  moveNCells = std::floor(moveLength/deltaX.value());
 	bool flag = false;
-	if(moveNCells > 0.2*mesh.nCells())
+	if(mag(moveNCells) > nMoveCellThreshHold.value())
 	{
 		flag = true;
+	}
+	bool direaction = false;
+	if(mesh.C()[mesh.nCells()].x() > mesh.C()[0].x())
+	{
+		direaction = true;
 	}
 	
 	// move fields p, he, Yi, U
@@ -54,7 +64,16 @@
 		}
 		forAll(mesh.C(),celli)
 		{
-			label icell = celli+moveNCells;
+			label icell;
+			if(direaction)
+			{
+				icell = celli-moveNCells;
+			}
+			else
+			{
+				icell = celli+moveNCells;				
+			}
+			
 			if(icell > mesh.C().size()-1)
 			{
 				icell = mesh.C().size()-1;
