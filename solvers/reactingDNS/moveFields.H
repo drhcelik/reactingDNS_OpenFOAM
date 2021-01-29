@@ -50,11 +50,12 @@
 		direaction = true;
 	}
 	
-	// move fields p, he, Yi, U
+	// move fields p, he, Yi, U, dpdt
 	if(flag)
 	{
 		volScalarField& he = thermo.he();
 		scalarField pTmp = p.internalField();
+		scalarField dpdtTmp = dpdt.internalField();
 		scalarField heTmp = he.internalField();
 		vectorField UTmp = U.internalField();
 		List<scalarField> YTmp(Y.size());
@@ -83,6 +84,7 @@
 				icell = 0;
 			}
 			pTmp[celli] = p[icell];
+			dpdtTmp[celli] =  dpdt[icell];
 			heTmp[celli] = he[icell];
 			UTmp[celli] = U[icell];
 			forAll(YTmp,i)
@@ -95,20 +97,18 @@
 		{
 			p[celli] = pTmp[celli];
 			he[celli] = heTmp[celli];
+			dpdt[celli] =  dpdtTmp[celli];
 			U[celli] = UTmp[celli];
 			forAll(Y,i)
 			{
 				Y[i][celli] = YTmp[i][celli];
 			}
 		}
-		// update T, rho, phi and dpdt
+		// update T, rho, phi and K
 		thermo.correct();
 		rho = thermo.rho();
-		phi = linearInterpolate(rho*U) & mesh.Sf();
-		if (thermo.dpdt())
-		{
-			dpdt = fvc::ddt(p);
-		}	
+		phi = linearInterpolate(rho*U) & mesh.Sf();	
+		K = 0.5*magSqr(U);
 		Info << "%%%%%%%%%%%%%%%%%ATTENTION%%%%%%%%%%%%% "  << endl;
 		Info << " move flame front " << endl;
 		Info << "%%%%%%%%%%%%%%%%%ATTENTION%%%%%%%%%%%%% "  << endl;
