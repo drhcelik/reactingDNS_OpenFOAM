@@ -1,0 +1,28 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.0                                   |
+|   \\  /    A nd           | Web:      http://www.openfoam.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+version                         2.0;
+format                          ascii;
+class                           dictionary;
+object                          flameBallProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+//flameThickness 2.25e-4;
+//burntThickness 0.75e-4;
+
+//start  (0 0.002 0); 
+//end  (0.002 0 0);  
+//origin (0 0 0);
+
+innerBunrtRadius                    innerBunrtRadius [0 1 0 0 0] 0.00485;
+outerBunrtRadius                 outerBunrtRadius [0 1 0 0 0] 0.00525;
+CCx     0.01;
+CCy     0.0005;
+CCz     0.0005;
+

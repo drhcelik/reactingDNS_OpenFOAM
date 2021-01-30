@@ -1,0 +1,493 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.0                                   |
+|   \\  /    A nd           | Web:      http://www.openfoam.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+version                         2.0;
+format                          ascii;
+class                           dictionary;
+object                          speciesLambda;
+}
+
+// Scheme: Lu
+
+H
+{
+Lambda1	-0.855E+00	;
+Lambda2	0.365E+01	;
+Lambda3	-0.398E+00	;
+Lambda4	0.176E-01	;
+}
+H2
+{
+Lambda1	0.913E+01	;
+Lambda2	-0.435E+00	;
+Lambda3	0.113E+00	;
+Lambda4	-0.253E-02	;
+}
+O
+{
+Lambda1	0.168E+01	;
+Lambda2	0.193E+01	;
+Lambda3	-0.174E+00	;
+Lambda4	0.784E-02	;
+}
+O2
+{
+Lambda1	-0.194E+01	;
+Lambda2	0.289E+01	;
+Lambda3	-0.271E+00	;
+Lambda4	0.115E-01	;
+}
+OH
+{
+Lambda1	0.100E+02	;
+Lambda2	-0.154E+01	;
+Lambda3	0.303E+00	;
+Lambda4	-0.130E-01	;
+}
+H2O
+{
+Lambda1	0.235E+02	;
+Lambda2	-0.906E+01	;
+Lambda3	0.155E+01	;
+Lambda4	-0.772E-01	;
+}
+CO
+{
+Lambda1	0.116E+02	;
+Lambda2	-0.302E+01	;
+Lambda3	0.582E+00	;
+Lambda4	-0.293E-01	;
+}
+HCO
+{
+Lambda1	0.561E+01	;
+Lambda2	-0.191E+01	;
+Lambda3	0.590E+00	;
+Lambda4	-0.357E-01	;
+}
+CO2
+{
+Lambda1	-0.115E+02	;
+Lambda2	0.597E+01	;
+Lambda3	-0.583E+00	;
+Lambda4	0.211E-01	;
+}
+CH3
+{
+Lambda1	0.136E+02	;
+Lambda2	-0.445E+01	;
+Lambda3	0.876E+00	;
+Lambda4	-0.460E-01	;
+}
+CH4
+{
+Lambda1	0.130E+02	;
+Lambda2	-0.486E+01	;
+Lambda3	0.103E+01	;
+Lambda4	-0.570E-01	;
+}
+HO2
+{
+Lambda1	0.477E+01	;
+Lambda2	-0.428E+00	;
+Lambda3	0.268E+00	;
+Lambda4	-0.165E-01	;
+}
+H2O2
+{
+Lambda1	0.898E+00	;
+Lambda2	0.133E+01	;
+Lambda3	0.182E-01	;
+Lambda4	-0.447E-02	;
+}
+CH2O
+{
+Lambda1	0.484E+01	;
+Lambda2	-0.213E+01	;
+Lambda3	0.699E+00	;
+Lambda4	-0.438E-01	;
+}
+CH3O
+{
+Lambda1	-0.614E+01	;
+Lambda2	0.247E+01	;
+Lambda3	0.648E-01	;
+Lambda4	-0.146E-01	;
+}
+C2H6
+{
+Lambda1	-0.139E+02	;
+Lambda2	0.609E+01	;
+Lambda3	-0.467E+00	;
+Lambda4	0.112E-01	;
+}
+C2H4
+{
+Lambda1	-0.134E+02	;
+Lambda2	0.612E+01	;
+Lambda3	-0.486E+00	;
+Lambda4	0.124E-01	;
+}
+C2H5
+{
+Lambda1	-0.133E+02	;
+Lambda2	0.582E+01	;
+Lambda3	-0.438E+00	;
+Lambda4	0.102E-01	;
+}
+C2H
+{
+Lambda1	-0.102E+02	;
+Lambda2	0.579E+01	;
+Lambda3	-0.606E+00	;
+Lambda4	0.248E-01	;
+}
+C2H2
+{
+Lambda1	-0.920E+01	;
+Lambda2	0.513E+01	;
+Lambda3	-0.467E+00	;
+Lambda4	0.164E-01	;
+}
+C2H3
+{
+Lambda1	-0.137E+02	;
+Lambda2	0.635E+01	;
+Lambda3	-0.553E+00	;
+Lambda4	0.171E-01	;
+}
+CH3OH
+{
+Lambda1	-0.349E+01	;
+Lambda2	0.134E+01	;
+Lambda3	0.229E+00	;
+Lambda4	-0.222E-01	;
+}
+CH2OH
+{
+Lambda1	-0.974E+01	;
+Lambda2	0.470E+01	;
+Lambda3	-0.333E+00	;
+Lambda4	0.730E-02	;
+}
+CH2CO
+{
+Lambda1	-0.955E+01	;
+Lambda2	0.454E+01	;
+Lambda3	-0.310E+00	;
+Lambda4	0.599E-02	;
+}
+HCCO
+{
+Lambda1	-0.533E+00	;
+Lambda2	0.222E+01	;
+Lambda3	-0.108E+00	;
+Lambda4	0.107E-02	;
+}
+CH3CO
+{
+Lambda1	-0.752E+01	;
+Lambda2	0.330E+01	;
+Lambda3	-0.848E-01	;
+Lambda4	-0.642E-02	;
+}
+CH2CHO
+{
+Lambda1	-0.627E+01	;
+Lambda2	0.291E+01	;
+Lambda3	-0.436E-01	;
+Lambda4	-0.778E-02	;
+}
+CH3CHO
+{
+Lambda1	-0.106E+02	;
+Lambda2	0.447E+01	;
+Lambda3	-0.227E+00	;
+Lambda4	-0.631E-03	;
+}
+C3H4-A
+{
+Lambda1	-0.133E+02	;
+Lambda2	0.592E+01	;
+Lambda3	-0.465E+00	;
+Lambda4	0.117E-01	;
+}
+C3H4-P
+{
+Lambda1	-0.952E+01	;
+Lambda2	0.434E+01	;
+Lambda3	-0.244E+00	;
+Lambda4	0.142E-02	;
+}
+C3H6
+{
+Lambda1	-0.154E+02	;
+Lambda2	0.667E+01	;
+Lambda3	-0.537E+00	;
+Lambda4	0.138E-01	;
+}
+C4H6
+{
+Lambda1	-0.120E+02	;
+Lambda2	0.514E+01	;
+Lambda3	-0.329E+00	;
+Lambda4	0.448E-02	;
+}
+NC3H7
+{
+Lambda1	-0.159E+02	;
+Lambda2	0.701E+01	;
+Lambda3	-0.613E+00	;
+Lambda4	0.185E-01	;
+}
+C4H7
+{
+Lambda1	-0.191E+02	;
+Lambda2	0.816E+01	;
+Lambda3	-0.746E+00	;
+Lambda4	0.236E-01	;
+}
+C4H8-1
+{
+Lambda1	-0.188E+02	;
+Lambda2	0.797E+01	;
+Lambda3	-0.709E+00	;
+Lambda4	0.214E-01	;
+}
+PC4H9
+{
+Lambda1	-0.183E+02	;
+Lambda2	0.774E+01	;
+Lambda3	-0.683E+00	;
+Lambda4	0.205E-01	;
+}
+CH3COCH2
+{
+Lambda1	-0.128E+02	;
+Lambda2	0.542E+01	;
+Lambda3	-0.370E+00	;
+Lambda4	0.634E-02	;
+}
+C2H5CHO
+{
+Lambda1	-0.806E+01	;
+Lambda2	0.326E+01	;
+Lambda3	-0.452E-01	;
+Lambda4	-0.947E-02	;
+}
+C5H9
+{
+Lambda1	-0.192E+02	;
+Lambda2	0.788E+01	;
+Lambda3	-0.679E+00	;
+Lambda4	0.192E-01	;
+}
+C5H10-1
+{
+Lambda1	-0.199E+02	;
+Lambda2	0.827E+01	;
+Lambda3	-0.746E+00	;
+Lambda4	0.229E-01	;
+}
+C5H11-1
+{
+Lambda1	-0.177E+02	;
+Lambda2	0.736E+01	;
+Lambda3	-0.611E+00	;
+Lambda4	0.164E-01	;
+}
+C2H5O
+{
+Lambda1	-0.143E+02	;
+Lambda2	0.587E+01	;
+Lambda3	-0.405E+00	;
+Lambda4	0.697E-02	;
+}
+CH3O2
+{
+Lambda1	0.528E+01	;
+Lambda2	-0.193E+01	;
+Lambda3	0.629E+00	;
+Lambda4	-0.387E-01	;
+}
+CH3O2H
+{
+Lambda1	-0.586E+01	;
+Lambda2	0.281E+01	;
+Lambda3	-0.251E-01	;
+Lambda4	-0.887E-02	;
+}
+C2H3O1-2
+{
+Lambda1	-0.283E+02	;
+Lambda2	0.123E+02	;
+Lambda3	-0.137E+01	;
+Lambda4	0.530E-01	;
+}
+C2H3CO
+{
+Lambda1	-0.180E+02	;
+Lambda2	0.790E+01	;
+Lambda3	-0.744E+00	;
+Lambda4	0.246E-01	;
+}
+C2H3CHO
+{
+Lambda1	-0.175E+02	;
+Lambda2	0.736E+01	;
+Lambda3	-0.646E+00	;
+Lambda4	0.193E-01	;
+}
+C3H5O
+{
+Lambda1	-0.168E+02	;
+Lambda2	0.710E+01	;
+Lambda3	-0.605E+00	;
+Lambda4	0.172E-01	;
+}
+C4H7O
+{
+Lambda1	-0.945E+01	;
+Lambda2	0.383E+01	;
+Lambda3	-0.129E+00	;
+Lambda4	-0.547E-02	;
+}
+C3H5-A
+{
+Lambda1	-0.208E+02	;
+Lambda2	0.907E+01	;
+Lambda3	-0.894E+00	;
+Lambda4	0.311E-01	;
+}
+C3H3
+{
+Lambda1	-0.995E+01	;
+Lambda2	0.506E+01	;
+Lambda3	-0.415E+00	;
+Lambda4	0.121E-01	;
+}
+C3H2
+{
+Lambda1	-0.241E+01	;
+Lambda2	0.257E+01	;
+Lambda3	-0.149E+00	;
+Lambda4	0.284E-02	;
+}
+CH2(S)
+{
+Lambda1	0.189E+02	;
+Lambda2	-0.651E+01	;
+Lambda3	0.113E+01	;
+Lambda4	-0.570E-01	;
+}
+NC3H7CHO
+{
+Lambda1	-0.108E+02	;
+Lambda2	0.439E+01	;
+Lambda3	-0.201E+00	;
+Lambda4	-0.234E-02	;
+}
+NC3H7CO
+{
+Lambda1	-0.885E+01	;
+Lambda2	0.363E+01	;
+Lambda3	-0.104E+00	;
+Lambda4	-0.650E-02	;
+}
+C2H5COCH2
+{
+Lambda1	-0.792E+01	;
+Lambda2	0.306E+01	;
+Lambda3	-0.124E-01	;
+Lambda4	-0.113E-01	;
+}
+CH3CHCO
+{
+Lambda1	-0.145E+02	;
+Lambda2	0.646E+01	;
+Lambda3	-0.543E+00	;
+Lambda4	0.154E-01	;
+}
+NC3H7COCH3
+{
+Lambda1	-0.123E+02	;
+Lambda2	0.488E+01	;
+Lambda3	-0.259E+00	;
+Lambda4	-0.108E-03	;
+}
+NC3H7COCH2
+{
+Lambda1	-0.133E+02	;
+Lambda2	0.545E+01	;
+Lambda3	-0.353E+00	;
+Lambda4	0.481E-02	;
+}
+NC7H16
+{
+Lambda1	-0.180E+02	;
+Lambda2	0.728E+01	;
+Lambda3	-0.589E+00	;
+Lambda4	0.150E-01	;
+}
+C7H15-1
+{
+Lambda1	-0.171E+02	;
+Lambda2	0.696E+01	;
+Lambda3	-0.551E+00	;
+Lambda4	0.134E-01	;
+}
+C7H15
+{
+Lambda1	-0.173E+02	;
+Lambda2	0.698E+01	;
+Lambda3	-0.547E+00	;
+Lambda4	0.131E-01	;
+}
+C7H15O2
+{
+Lambda1	-0.128E+02	;
+Lambda2	0.509E+01	;
+Lambda3	-0.289E+00	;
+Lambda4	0.132E-02	;
+}
+C7H14OOH
+{
+Lambda1	-0.138E+02	;
+Lambda2	0.554E+01	;
+Lambda3	-0.353E+00	;
+Lambda4	0.436E-02	;
+}
+C7H14OOHO2
+{
+Lambda1	-0.128E+02	;
+Lambda2	0.511E+01	;
+Lambda3	-0.307E+00	;
+Lambda4	0.270E-02	;
+}
+C7H14O
+{
+Lambda1	-0.239E+02	;
+Lambda2	0.968E+01	;
+Lambda3	-0.917E+00	;
+Lambda4	0.299E-01	;
+}
+NC7KET
+{
+Lambda1	-0.122E+02	;
+Lambda2	0.485E+01	;
+Lambda3	-0.262E+00	;
+Lambda4	0.318E-03	;
+}
+N2
+{
+Lambda1	0.129E+02	;
+Lambda2	-0.353E+01	;
+Lambda3	0.646E+00	;
+Lambda4	-0.319E-01	;
+}

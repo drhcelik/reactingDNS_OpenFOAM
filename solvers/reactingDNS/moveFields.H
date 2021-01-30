@@ -44,10 +44,10 @@
 	{
 		flag = true;
 	}
-	bool direaction = false;
+	bool direction = false;
 	if(mesh.C()[mesh.nCells()].x() > mesh.C()[0].x())
 	{
-		direaction = true;
+		direction = true;
 	}
 	
 	// move fields p, he, Yi, U, dpdt
@@ -66,7 +66,7 @@
 		forAll(mesh.C(),celli)
 		{
 			label icell;
-			if(direaction)
+			if(direction)
 			{
 				icell = celli-moveNCells;
 			}
