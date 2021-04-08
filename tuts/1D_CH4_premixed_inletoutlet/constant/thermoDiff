@@ -758,12 +758,3 @@ ThermDiff_2	-9.234E-04	;
 ThermDiff_3	4.241E-07	;
 ThermDiff_4	-6.428E-11	;
 }
-TRANSPORT-LIBRARY
-{
-ThermDiff_1	WORKING	;
-ThermDiff_2	SPACE	;
-ThermDiff_3	REQUIREMENTS	;
-ThermDiff_4	ARE	;
-}
-INTEGER:-214
-{

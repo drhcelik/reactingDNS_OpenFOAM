@@ -1,0 +1,140 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.2.2                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 0.01;
+
+lx0a   0;
+ly0a   0;
+lz0a   0;
+
+lx1a  0.7;
+ly1a  0.5;
+lz1a  0.5;
+
+
+
+lx0   0.7;
+ly0   0;
+lz0   0;
+
+lx1  1.2;
+ly1  0.5;
+lz1  0.5;
+
+
+lx0b   1.2;
+ly0b   0;
+lz0b   0;
+
+lx1b  3;
+ly1b  0.5;
+lz1b  0.5;
+
+
+vertices
+(
+
+    ($lx0a	$ly0a	$lz0a)		//0
+    ($lx1a	$ly0a 	$lz0a)		//1
+    ($lx1a	$ly1a 	$lz0a)		//2
+    ($lx0a	$ly1a 	$lz0a)		//3
+    ($lx0a 	$ly0a 	$lz1a)		//4
+    ($lx1a 	$ly0a 	$lz1a)		//5
+    ($lx1a	$ly1a	$lz1a)		//6
+    ($lx0a	$ly1a 	$lz1a)		//7
+	
+	
+
+    ($lx1	$ly0 	$lz0)		//8
+    ($lx1	$ly1 	$lz0)		//9
+    ($lx1 	$ly0 	$lz1)		//10
+    ($lx1	$ly1	$lz1)		//11
+
+
+    ($lx1b	$ly0b 	$lz0b)		//12
+    ($lx1b	$ly1b 	$lz0b)		//13
+    ($lx1b 	$ly0b 	$lz1b)		//14
+    ($lx1b	$ly1b	$lz1b)		//15
+
+);
+
+blocks
+(
+	hex (0 1 2 3 4 5 6 7) region1 (200 1 1) simpleGrading (1 1 1)    
+    hex (1 8 9 2 5 10 11 6) region2 (600 1 1) simpleGrading (1 1 1)	
+    hex (8 12 13 9 10 14 15 11) region3 (600 1 1) simpleGrading (1 1 1)	
+
+);
+
+edges
+(
+);
+
+boundary
+(
+
+    inletBoundary
+    {
+        type patch;
+        faces
+        (
+            (0 4 7 3)
+        );
+    }
+
+
+    outletBoundary
+    {
+        type patch;
+        faces
+        (
+            (12 14 15 13)
+        );
+    }
+
+
+    frontAndBack
+    {
+        type empty;
+        faces
+        (
+            (0 3 2 1)
+			(1 5 4 0)
+            (3 7 6 2)			
+            (4 5 6 7)
+
+			
+            (1 8 9 2)
+			(5 10 11 6)		
+            (6 11 9 2)			
+            (1 5 10 8)
+
+            (8 12 13 9)
+			(10 14 15 11)		
+            (9 11 15 13)			
+            (8 10 14 12)			
+
+
+       );
+    }    
+
+
+);
+
+
+
+// ************************************************************************* //

@@ -1,0 +1,111 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.4.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     reactingDNS;
+
+startFrom       startTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         0.5;
+
+deltaT          1e-6;
+
+writeControl    adjustableRunTime;
+
+writeInterval   0.001;
+
+purgeWrite      10;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable true;
+
+adjustTimeStep  no;
+
+
+OptimisationSwitches
+{
+
+    //- Parallel IO file handler
+    // uncollated (default), collated or masterUncollated
+    fileHandler collated;
+
+    //- collated: thread buffer size for queued file writes.
+    // If set to 0 or not sufficient for the file size threading is not used.
+    // Default: 2e9
+    maxThreadFileBufferSize 2e9;
+
+    //- masterUncollated: non-blocking buffer size.
+    // If the file exceeds this buffer size scheduled transfer is used.
+    // Default: 2e9
+    maxMasterFileBufferSize 2e9;
+}
+
+
+
+functions
+{
+
+    #includeFunc singleGraph
+
+fieldMinMaxU
+   {
+       type        fieldMinMax;
+       functionObjectLibs ("libfieldFunctionObjects.so");
+       writeControl    adjustableRunTime;
+       writeInterval   0.001;
+       log         yes;
+       location    no;
+       mode        magnitude;
+       fields
+       (
+        U
+        rho
+        T
+        CO
+        CH3
+        OH
+        H2
+        H2O2
+
+       );
+    }
+
+
+
+}
+
+libs
+(
+        "libchemistryModel_DLB.so" 
+        "libODE_DLB.so"
+        "$FOAM_CASE/constant/foam_mech_files/libc_pyjac.so"
+);
+
+
+// ************************************************************************* //

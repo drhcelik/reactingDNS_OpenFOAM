@@ -27,7 +27,7 @@ thermoType
 
 inertSpecie N2;
 
-#include "thermo.compressibleGas"
+#include "thermo.foam"
 
 
 // ************************************************************************* //

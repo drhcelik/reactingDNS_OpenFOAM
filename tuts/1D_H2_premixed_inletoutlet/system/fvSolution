@@ -142,7 +142,7 @@ PIMPLE
     transonic       no;
     nCorrectors     4;
     nNonOrthogonalCorrectors 2;//0;
-    momentumPredictor on;//yes;
+//    momentumPredictor on;//yes;
 }
 
 relaxationFactors
